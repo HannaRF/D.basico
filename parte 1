@@ -1,22 +1,18 @@
 from random import randrange
+from numpy.random import multinomial
 class Pessoa:
-    def __init__(self,sexo,cor_raca,regiao,renda_percapita,renda_media,renda_mediana,rede_ensino,modalidade,turno,dif_financeira,dif_acesso_local,dif_cumprir_horario,falta_tempo,outra_dif,sem_dif):
-        self.sexo = sexo
-        self.cor_raca = cor_raca
-        self.regiao = regiao
-        self.renda_percapita = renda_percapita
-        self.renda_media = renda_media
-        self.renda_mediana = renda_mediana
-        self.rede_ensino = rede_ensino
-        self.modalidade = modalidade
-        self.turno = turno
-        self.dif_financeira = dif_financeira
-        self.dif_acesso_local = dif_acesso_local
-        self.dif_cumprir_horário = dif_cumprir_horario
-        self.falta_tempo = falta_tempo
-        self.outra_dif = outra_dif
-        self.sem_dif = sem_dif
- 
+    def __init__(self,sexo,cor_raca,regiao,renda_percapita,renda_media,renda_mediana,rede_ensino,modalidade,turno,dificuldade):
+        self.sexo = random.multinomial(1,[random.uniform(0,1)])             # [ feminino,masculino ]
+        self.cor_raca = random.multinomial(1,[random.uniform(0,1)])         # [ branco,preto_pardo ]
+        self.regiao = random.multinomial(1,[1/5]*5)                         # [ Norte,Sul,Sudeste,Nordeste,Centro-Oeste ]
+        self.renda_percapita = #media(random.sample(intervalo de renda,12))/n_pessoas
+        self.renda_media = #media(random.sample(intervalo de renda,12))*n_pessoas
+        self.renda_mediana = #renda_media +- erro
+        self.rede_ensino = random.multinomial(1,[random.uniform(0,1)])
+        self.modalidade = random.multinomial(1,[random.uniform(0,1)])
+        self.turno = #if modalidade ...
+        self.dificuldade =
+        
 a1=['F','M']
 a2=['branco','preto_pardo']
 a3=['N','S','SE','NE','CO']
@@ -24,7 +20,3 @@ a7=['pública','particular']
 a8=['presencial','à distância']
 a9=['manhã','tarde','noite','parcial']#atenção,relacionada
 a=[False,True]
-
-populaçao = [Pessoa(a1[randrange(self,0,2,1,int)], a2[randrange(self,0,2,1,int)],a3[randrange(self,0,5,1,int),randrange...]) for i in range(100)]
-
-return(populaçao[0].peso, populaçao[0].idade)
