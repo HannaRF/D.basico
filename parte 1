@@ -2,12 +2,13 @@ from random import randrange
 from numpy.random import multinomial
 class Pessoa:
     def __init__(self,sexo,cor_raca,regiao,renda_percapita,renda_media,renda_mediana,rede_ensino,modalidade,turno,dificuldade):
-        self.sexo = random.multinomial(1,[random.uniform(0,1)])             # [ feminino,masculino ]
-        self.cor_raca = random.multinomial(1,[random.uniform(0,1)])         # [ branco,preto_pardo ]
-        self.regiao = random.multinomial(1,[1/5]*5)                         # [ Norte,Sul,Sudeste,Nordeste,Centro-Oeste ]
-        self.renda_percapita = #media(random.sample(intervalo de renda,12))/n_pessoas
-        self.renda_media = #media(random.sample(intervalo de renda,12))*n_pessoas
-        self.renda_mediana = #renda_media +- erro
+        self.sexo = random.multinomial(1,[random.uniform(0,1)])                              # [ feminino,masculino ]
+        self.cor_raca = random.multinomial(1,[random.uniform(0,1)])                          # [ branco,preto_pardo ]
+        self.regiao = random.multinomial(1,[1/5]*5)                                          # [ Norte,Sul,Sudeste,Nordeste,Centro-Oeste ]
+        n=random.randrange(1,8)
+        self.renda_percapita = sum(random.sample(intervalo de renda,12))/(12*n)
+        self.renda_media = self.renda_percapita *12*n
+        self.renda_mediana = self.renda_media + random ####
         self.rede_ensino = random.multinomial(1,[random.uniform(0,1)])
         self.modalidade = random.multinomial(1,[random.uniform(0,1)])
         self.turno = #if modalidade ...
