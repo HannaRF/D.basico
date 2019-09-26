@@ -1,1 +1,186 @@
-file
+import numpy as np
+import matplotlib.pyplot as plt
+#montar um histograma com os lançamentos de um dado de n lados cuja prob de cada lado cair é proporcional ao valor de seu lado
+
+def dado(n=6):
+    a = []
+    for i in range (1,n+1):
+        k=1
+        while k<=i:
+            a.append(i)
+            k+=1
+    return np.random.choice(a)
+#------------------------------------------------------------------------------------------------------------------------------------
+b = []
+for j in range(10000):
+    b.append(dado(10))
+plt.hist(b)
+#------------------------------------------------------------------------------------------------------------------------------------
+def dadinho():
+    while True:
+        i = np.random.randint(1,n+1)
+        if np.random.choice([True,False], p=[i/n, 1-i/n]):
+            break
+    return i
+#--------------------------------------------------------------------------------------------------------------------------------------
+
+#yield (igual ao return,mas não armazena na memória essa info ao não ser que esta seja pedida,caracterizando um gerador
+#next (pede o próximo valor da função geradora)
+#enumerate (retorna uma lista de tuplas estilo (index,dado) ) 
+#np.random.choice([1,2,3,4],p=[3/8,1/8,1/4,1/4]) : 
+
+
+# In[9]:
+
+
+l = []
+for i in range(1000):
+    l.append(dado(10))
+
+
+# In[10]:
+
+
+import matplotlib.pyplot as plt
+
+
+# In[11]:
+
+
+plt.hist(l)
+
+
+# In[92]:
+
+
+def predio(altura,largura):
+    p = "\n"
+    c = " "
+    t = "  _"
+    b = "_/"
+    for i in range (1,largura):
+        t += "_"
+    t+="\n"
+    p += t
+    for i in range (altura):
+        c += "|"
+        if largura>0:
+            for j in range (largura):
+                c+="."
+            c+= "|\n"
+        p+=c
+    for k in range (largura):
+        b+= "_"
+    b+="_\\_"
+    p += b 
+    return p
+
+
+# In[93]:
+
+
+print(predio(2,2))
+
+
+# In[3]:
+
+
+def predio(altura,largura):
+    return "   "+"_"*largura+" \n"+         ("  |"+"."*largura+"| \n")*altura+           "_/_"+"_"*(largura) + "_\_"  
+
+
+# In[106]:
+
+
+print(predio(10,10))
+
+
+# In[111]:
+
+
+f = open("predio.txt","a+")
+f.write("\n" + predio(20,20))
+f.close()
+
+
+# In[ ]:
+
+
+https://www.guru99.com/reading-and-writing-files-in-python.html
+
+
+# In[112]:
+
+
+f = open("predio.txt","w+")
+f.replace("|.", "[.")
+f.replace(".|",".]")
+f.close()
+
+
+# In[156]:
+
+
+fin = open("predio.txt", "rt")
+fout = open("predio.txt", "wt")
+
+for line in fin:
+    fout.write(line.replace('|.', '[.'))
+    fout.write(line.replace('.|','.]'))
+    
+fin.close()
+fout.close()
+
+
+# In[172]:
+
+
+f = open("predio.txt","w+")
+f.write(predio(10,10))
+f.close()
+
+
+# In[173]:
+
+
+import re
+
+
+t = open("predio.txt","r").read()
+f = open("predio.txt","w")
+c = re.sub('\|\.', '[.', t)
+f.write(re.sub('\.\|', '.]', c))
+f.close()
+
+
+# In[27]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+def conv(predio):
+    predio = predio.split("\n")
+    imagem = np.ones([20,20])
+    for i,line in enumerate(predio):
+        for k,s in enumerate(line):
+            if (s=="|") or (s=="_") or (s=="/") or (s=="\\"):
+                imagem[i,k]=0
+    plt.imshow(imagem)   
+
+
+# In[28]:
+
+
+s = predio(10,10)
+conv(s)
+
+
+# In[183]:
+
+
+
+
+
+# In[ ]:
+
+
