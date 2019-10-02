@@ -1,0 +1,15 @@
+module Aula1;
+
+import std.stdio;
+
+void main(string[] args){
+
+}
+// DUB : repositório de pacotes D /compilar projeto /
+// dub init myDproject
+// entra como default o "[json]" que cria uma pasta "dub.json" com os meta dados do projeto
+// dub add mir
+// pois se no código existe um "import.mir" ao compilar buga
+
+
+// PIP : o mesmo para o python
