@@ -68,3 +68,40 @@ class MyTest(unittest.TestCase): # TestCase é a classe padrao de destes da bibl
 a = MyTest()
 
 a.test()
+
+## dicas criar modulos
+
+# __eq__ : =
+# __add__ : +
+# __str__ : printar (print)
+# __iter__ : iterar (for)
+# __contains__ : checar se tem o valor
+
+## obs : @property
+# chama um método sem botar os parentesis vazios
+# ao ser colocada logo antes da def da função
+
+## dicas erros:
+
+# try ... :
+# except ... :
+def div(a/b):
+    try:
+        return a/b
+    except:
+        0
+# se der algum erro retorna 0
+
+#raise ... : força um erro
+
+#estrutura do erro
+
+class my error(Exception): #Exception herdado
+    def __init__(self,lista):
+        Exception.__init__(self,"0 in {},divisão por zero não existe".format(lista)) # printa o erro
+        
+# curso python 3 completo do iniciante ao avançado udemy
+# programar livro Structure and Interpretation of Computer Programs
+
+        
+
