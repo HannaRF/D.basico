@@ -48,3 +48,23 @@ class TestErdos(unittest.TestCase):
         
 if __name__ == "__main__":
     unittest.main() # executa os testes e retorna um relatório,com o tempo de execução
+
+    
+    
+    
+# monitoria,09/10/19
+
+import unittest
+
+def fun(x):
+    return x + 1
+
+class MyTest(unittest.TestCase): # TestCase é a classe padrao de destes da biblioteca unittest,que precisamos impor a herança
+    def test(self):
+        self.assertEqual(fun(3),4) # metodo padrao da TestCase
+    def test2(self):
+        self.assertEqual(fun(4),5)
+        
+a = MyTest()
+
+a.test()
